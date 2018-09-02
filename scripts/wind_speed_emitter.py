@@ -25,7 +25,7 @@ def checksum(sentence):
 
 def generate_nmea(wind_speed):
     phrase = "MWV,0.0,R,"
-    phrase += str(wind_speed)
+    phrase += "%.1f" % wind_speed
     phrase += ",K,A"
     cksum = checksum(phrase)
     phrase += '*' + str(cksum)
