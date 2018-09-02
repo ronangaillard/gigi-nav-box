@@ -29,7 +29,7 @@ def generate_nmea(wind_speed):
     phrase += ",K,A"
     cksum = checksum(phrase)
     phrase += '*' + str(cksum)
-    return phrase
+    return '$' + phrase
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
