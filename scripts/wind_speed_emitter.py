@@ -21,10 +21,10 @@ def checksum(sentence):
     """ Return the nmeadata, the checksum from
         sentence, and the calculated checksum
     """
-    return '%X' % calc_cksum
+    return '{:02X}'.format(calc_cksum)
 
 def generate_nmea(wind_speed):
-    phrase = "MWV,0.0,R,"
+    phrase = "IIMWV,000.0,R,"
     phrase += "%.1f" % wind_speed
     phrase += ",K,A"
     cksum = checksum(phrase)
